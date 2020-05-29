@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AGENCY</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body style="background-color:lightblue; font-size: larger; font-style:italic">
+    <h1>2020-Lab2 agency</h1>
+    <h3>Add country</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addCountry()">
+        <input type="text" id="add-countryNaming" placeholder="New Country">
+        <input type="text" id="add-climate" placeholder="New Climate">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editCountry">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateCountry()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-countryNaming">
+            <input type="text" id="edit-climate">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Climate</th>
+        </tr>
+        <tbody id="countries"></tbody>
+    </table>
+
+    <script src="js/lab2.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getCountries();
+    </script>
+</body>
+</html>
+
